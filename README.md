@@ -44,6 +44,7 @@ Several machine learning models were used in this project to predict bicycle ren
 1. **Random Forest**
 2. **Linear Regression**
 3. **XGBoost**
+4. **CatBoost**
 
 Each model was tuned using hyperparameter optimization techniques and evaluated based on the Root Mean Squared Error (RMSE) metric.
 
@@ -71,26 +72,31 @@ The models were evaluated based on RMSE, with a final comparison across models. 
 - **Random Forest**: 46.75
 - **Linear Regression**: 115.98
 - **XGBoost**: 40.74
+- **CatBoost**: 37.77
 
 ### Top Features:
 - **Random Forest**: `hour, log_pollution, temp`
 - **Linear Regression**: `PCA (Not Explainable)`
 - **XGBoost**: `hour, year, workingday`
+- **CatBoost**: `hour`, `year`, `log_pollution`
 
 ### Hyperparameters Used:
 - **Random Forest**: `max_features:auto`, `max_depth:30`, `min_samples_leaf:1`
 - **Linear Regression**: None
 - **XGBoost**: `max_features:auto`, `max_depth:5`
+- **CatBoost**: `depth:8`, `iterations:1000`, `l2_leaf_reg:5`, `learning_rate:0.1`
 
 ### Features Dropped:
 - **Random Forest**: `atemp`, `sunlight`, `traffic`, `pollution`, `holiday`
 - **Linear Regression**: `atemp`, `sunlight`, `traffic`, `pollution`, `holiday`
 - **XGBoost**: `atemp`, `sunlight`, `traffic`, `pollution`, `windspeed`
+- **CatBoost**: `atemp`, `sunlight`, `traffic`, `pollution`, `holiday`
 
 ### Runtime (Training + Inference):
 - **Random Forest**: 1342.78 seconds
 - **Linear Regression**: 0.07 seconds
 - **XGBoost**: 19.80 seconds
+- **CatBoost**: 926.52 seconds
 
 ### Hardware Used:
 - All models were trained on **CPU**.
